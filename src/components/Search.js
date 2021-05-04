@@ -8,10 +8,10 @@ const Search = ({ inputMovies, setInputMovies }) => {
     return (
         <div>
             <TextField
-                id="outlined-search"
-                label="Search movies"
-                type="search"
-                variant="outlined"
+                id='outlined-search'
+                label='Search movies'
+                type='search'
+                variant='outlined'
                 value={inputMovies}
                 onChange={searchMovies}
             />
