@@ -7,7 +7,7 @@ const App = () => {
   const [inputMovies, setInputMovies] = useState("");
 
   const getMovies = async () => {
-    const url = `https://www.omdbapi.com/?s=star wars&apikey=${process.env.REACT_APP_API_KEY}`;
+    const url = `https://www.omdbapi.com/?s=${inputMovies}&apikey=${process.env.REACT_APP_API_KEY}`;
     await fetch(url)
     .then ((response) => response.json())
     .then ((data) => {
@@ -20,7 +20,7 @@ const App = () => {
   
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [inputMovies]);
 
   return (
     <div>
