@@ -4,6 +4,7 @@ import Search from './components/Search';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [inputMovies, setInputMovies] = useState("");
 
   const getMovies = async () => {
     const url = `https://www.omdbapi.com/?s=star wars&apikey=${process.env.REACT_APP_API_KEY}`;
@@ -23,8 +24,13 @@ const App = () => {
 
   return (
     <div>
-      <Search />
-      <MovieList movies={movies} />
+      <Search
+        inputMovies={inputMovies}
+        setInputMovies={setInputMovies}
+      />
+      <MovieList 
+        movies={movies}
+      />
     </div>
   )
 }
