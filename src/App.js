@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from './components/MovieList';
+import Search from './components/Search';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <div>
+      <Search />
       <MovieList movies={movies} />
     </div>
   )
