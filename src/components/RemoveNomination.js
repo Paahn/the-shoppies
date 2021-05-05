@@ -4,7 +4,7 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 const RemoveNomination = () => {
     return (
         <div>
-            <span><HighlightOffIcon /></span>
+            <span><HighlightOffIcon />Remove</span>
         </div>
     )
 }

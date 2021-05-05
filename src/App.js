@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddNomination from './components/AddNomination';
 import MovieList from './components/MovieList';
+import RemoveNomination from './components/RemoveNomination';
 import Search from './components/Search';
 
 const App = () => {
@@ -11,6 +12,13 @@ const App = () => {
   const addNomination = (movie) => {
     const newNominationList = [...nominations, movie];
     setNominations(newNominationList);
+  }
+
+  const removeNomination = (movie) => {
+    const newNominationsList = nominations.filter(
+      (nomination) => nomination.imdbID !== movie.imdbID
+    );
+    setNominations(newNominationsList);
   }
 
   const getMovies = async () => {
@@ -42,8 +50,8 @@ const App = () => {
       />
       <MovieList
         movies={nominations}
-        nominateComponent={AddNomination}
-        handleNominations={addNomination}
+        nominateComponent={RemoveNomination}
+        handleNominations={removeNomination}
       />
     </div>
   )
