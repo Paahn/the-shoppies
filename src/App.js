@@ -12,8 +12,8 @@ const App = () => {
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
     const idExists = movieNominationIDs.includes(movie.imdbID);
-    
-    if (!idExists){
+
+    if (!idExists && nominations.length < 5){
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
@@ -68,6 +68,7 @@ const App = () => {
         nominateComponent={AddNomination}
         handleNominations={addNomination}
       />
+      {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
       <MovieList
         movies={nominations}
         nominateComponent={RemoveNomination}
