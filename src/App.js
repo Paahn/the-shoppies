@@ -41,6 +41,11 @@ const App = () => {
         nominateComponent={AddNomination}
         handleNominations={addNomination}
       />
+      <MovieList
+        movies={nominations}
+        nominateComponent={AddNomination}
+        handleNominations={addNomination}
+      />
     </div>
   )
 }
