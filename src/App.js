@@ -43,6 +43,15 @@ const App = () => {
     getMovies();
   }, [inputMovies]);
 
+  useEffect(() => {
+    const movieNominations = JSON.parse(
+      localStorage.getItem('movie-nominations')
+    );
+    if (movieNominations) {
+      setNominations(movieNominations);
+    }
+  }, [])
+
   return (
     <div>
       <Search
