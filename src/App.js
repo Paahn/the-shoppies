@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AddNomination from './components/AddNomination';
 import MovieList from './components/MovieList';
 import Search from './components/Search';
 
@@ -30,6 +31,7 @@ const App = () => {
       />
       <MovieList 
         movies={movies}
+        nominateComponent={AddNomination}
       />
     </div>
   )

@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/movielist.css';
 
-const MovieList = ({ movies }) => {
+const MovieList = ({ movies, nominateComponent }) => {
+    const NominateComponent = nominateComponent;
     return (
         <div>
             {movies.map((movie) => 
@@ -9,6 +10,7 @@ const MovieList = ({ movies }) => {
                 <img src={movie.Poster} alt='movie'></img>
                 <p>{movie.Title}</p>
                 <p>{movie.Year}</p>
+                <div><NominateComponent />Nominate Movie</div>
             </div>
             )}
         </div>
