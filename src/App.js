@@ -11,7 +11,6 @@ const App = () => {
   const addNomination = (movie) => {
     const newNominationList = [...nominations, movie];
     setNominations(newNominationList);
-    console.log('Movies...', newNominationList);
   }
 
   const getMovies = async () => {
