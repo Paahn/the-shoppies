@@ -12,6 +12,7 @@ const App = () => {
   const addNomination = (movie) => {
     const newNominationList = [...nominations, movie];
     setNominations(newNominationList);
+    saveToLocalStorage(newNominationList);
   }
 
   const removeNomination = (movie) => {
@@ -19,6 +20,7 @@ const App = () => {
       (nomination) => nomination.imdbID !== movie.imdbID
     );
     setNominations(newNominationsList);
+    saveToLocalStorage(newNominationsList);
   }
 
   const getMovies = async () => {
@@ -32,6 +34,10 @@ const App = () => {
       }
     })
   };
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('movie-nominations', JSON.stringify(items));
+  }
   
   useEffect(() => {
     getMovies();
