@@ -4,7 +4,7 @@ import '../styles/addnomination.css';
 
 const AddNomination = () => {
     return (
-        <div>
+        <div className='nomination-button'>
             <span><EmojiEventsIcon color='primary' />Nominate</span>
         </div>
     )
