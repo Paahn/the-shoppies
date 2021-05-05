@@ -10,9 +10,14 @@ const App = () => {
   const [nominations, setNominations] = useState([]);
 
   const addNomination = (movie) => {
-    const newNominationList = [...nominations, movie];
-    setNominations(newNominationList);
-    saveToLocalStorage(newNominationList);
+    const movieNominationIDs = nominations.map(nom => nom.imdbID);
+    const idExists = movieNominationIDs.includes(movie.imdbID);
+    
+    if (!idExists){
+      const newNominationList = [...nominations, movie];
+      setNominations(newNominationList);
+      saveToLocalStorage(newNominationList);
+    }
   }
 
   const removeNomination = (movie) => {
