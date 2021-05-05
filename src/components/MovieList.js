@@ -10,7 +10,7 @@ const MovieList = ({ movies, nominateComponent }) => {
                 <img src={movie.Poster} alt='movie'></img>
                 <p>{movie.Title}</p>
                 <p>{movie.Year}</p>
-                <div><NominateComponent />Nominate Movie</div>
+                <div><NominateComponent /></div>
             </div>
             )}
         </div>
