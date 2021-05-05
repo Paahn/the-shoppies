@@ -6,6 +6,13 @@ import Search from './components/Search';
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState('');
+  const [nominations, setNominations] = useState([]);
+
+  const addNomination = (movie) => {
+    const newNominationList = [...nominations, movie];
+    setNominations(newNominationList);
+    console.log('Movies...', newNominationList);
+  }
 
   const getMovies = async () => {
     const url = `https://www.omdbapi.com/?s=${inputMovies}&apikey=${process.env.REACT_APP_API_KEY}`;
@@ -32,6 +39,7 @@ const App = () => {
       <MovieList 
         movies={movies}
         nominateComponent={AddNomination}
+        handleNominations={addNomination}
       />
     </div>
   )
