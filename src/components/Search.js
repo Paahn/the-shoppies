@@ -11,7 +11,6 @@ const Search = ({ inputMovies, setInputMovies }) => {
     }
     return (
         <div>
-            <InputLabel htmlFor="outlined-search">Search Movies</InputLabel>
             <TextField
               InputProps={{
                 startAdornment: (
@@ -27,6 +26,7 @@ const Search = ({ inputMovies, setInputMovies }) => {
                 variant='outlined'
                 value={inputMovies}
                 onChange={searchMovies}
+                placeholder='Search movies'
             />
         </div>
     )
