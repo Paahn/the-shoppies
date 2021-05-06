@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AddNomination from './components/AddNomination';
 import MovieList from './components/MovieList';
+import Nominated from './components/Nominated';
 import RemoveNomination from './components/RemoveNomination';
 import Search from './components/Search';
 
@@ -84,6 +85,7 @@ const App = () => {
         handleNominations={addNomination}
         nominatedID={nominatedID}
         isResultsList
+        nominatedComponent={Nominated}
       />
       {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
       <MovieList
@@ -91,6 +93,7 @@ const App = () => {
         nominateComponent={RemoveNomination}
         handleNominations={removeNomination}
         nominatedID={nominatedID}
+        nominatedComponent={Nominated}
       />
     </div>
   )
