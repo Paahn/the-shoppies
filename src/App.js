@@ -82,12 +82,15 @@ const App = () => {
         movies={movies}
         nominateComponent={AddNomination}
         handleNominations={addNomination}
+        nominatedID={nominatedID}
+        isResultsList
       />
       {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
       <MovieList
         movies={nominations}
         nominateComponent={RemoveNomination}
         handleNominations={removeNomination}
+        nominatedID={nominatedID}
       />
     </div>
   )
