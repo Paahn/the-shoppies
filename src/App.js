@@ -8,6 +8,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState('');
   const [nominations, setNominations] = useState([]);
+  const [nominatedID, setNominatedID] = useState([]);
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
@@ -17,6 +18,8 @@ const App = () => {
       const newNominationList = [...nominations, movie];
       setNominations(newNominationList);
       saveToLocalStorage(newNominationList);
+      const newNominatedList = [...nominatedID, movie.imdbID];
+      setNominatedID(newNominatedList);
     }
   }
 
@@ -26,6 +29,8 @@ const App = () => {
     );
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
+    const movieNominationIDs = nominations.map(nom => nom.imdbID);
+    setNominatedID(movieNominationIDs);
   }
 
   const getMovies = async () => {
@@ -54,6 +59,16 @@ const App = () => {
     );
     if (movieNominations) {
       setNominations(movieNominations);
+    }
+  }, [])
+
+  useEffect(() => {
+    const movieNominations = JSON.parse(
+      localStorage.getItem('movie-nominations')
+    );
+    if (movieNominations) {
+      const movieNominationIDs = movieNominations.map(nom => nom.imdbID);
+      setNominatedID(movieNominationIDs);
     }
   }, [])
 
