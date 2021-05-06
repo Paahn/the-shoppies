@@ -4,6 +4,9 @@ import MovieList from './components/MovieList';
 import Nominated from './components/Nominated';
 import RemoveNomination from './components/RemoveNomination';
 import Search from './components/Search';
+import Card from '@material-ui/core/Card';
+import { CardContent } from '@material-ui/core';
+import '../src/app.css';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -75,26 +78,40 @@ const App = () => {
 
   return (
     <div>
-      <Search
-        inputMovies={inputMovies}
-        setInputMovies={setInputMovies}
-      />
-      <MovieList 
-        movies={movies}
-        nominateComponent={AddNomination}
-        handleNominations={addNomination}
-        nominatedID={nominatedID}
-        isResultsList
-        nominatedComponent={Nominated}
-      />
-      {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
-      <MovieList
-        movies={nominations}
-        nominateComponent={RemoveNomination}
-        handleNominations={removeNomination}
-        nominatedID={nominatedID}
-        nominatedComponent={Nominated}
-      />
+      <Card>
+      <CardContent>
+        <Search
+          inputMovies={inputMovies}
+          setInputMovies={setInputMovies}
+        />
+      </CardContent>
+      </Card>
+      <div className='movies-display'>
+        <Card>
+          <CardContent>
+            <MovieList 
+              movies={movies}
+              nominateComponent={AddNomination}
+              handleNominations={addNomination}
+              nominatedID={nominatedID}
+              isResultsList
+              nominatedComponent={Nominated}
+            />
+          </CardContent>
+        </Card>
+        {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
+        <Card>
+          <CardContent>
+            <MovieList
+              movies={nominations}
+              nominateComponent={RemoveNomination}
+              handleNominations={removeNomination}
+              nominatedID={nominatedID}
+              nominatedComponent={Nominated}
+            />
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }
