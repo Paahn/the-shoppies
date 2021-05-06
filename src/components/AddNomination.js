@@ -2,10 +2,13 @@ import React from 'react';
 import EmojiEventsIcon from '@material-ui/icons/EmojiEvents';
 import '../styles/addnomination.css';
 
-const AddNomination = () => {
+const AddNomination = ( { active, inactive }) => {
     return (
         <div className='nomination-button'>
-            <span><EmojiEventsIcon color='primary' />Nominate</span>
+            <span
+                className={`nomination ${active === 'true' ? 'nomination-available' : ''} ${inactive === 'true' ? 'nomination-unavailable' : ''}`}
+            >
+                <EmojiEventsIcon color='primary' />Nominate</span>
         </div>
     )
 }
