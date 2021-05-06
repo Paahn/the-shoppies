@@ -30,7 +30,7 @@ const App = () => {
     );
     setNominations(newNominationsList);
     saveToLocalStorage(newNominationsList);
-    const movieNominationIDs = nominations.map(nom => nom.imdbID);
+    const movieNominationIDs = newNominationsList.map(nom => nom.imdbID);
     setNominatedID(movieNominationIDs);
   }
 
