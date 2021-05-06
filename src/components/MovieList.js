@@ -13,7 +13,7 @@ const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, 
                 <p>{movie.Title}</p>
                 <p>{movie.Year}</p>
                 <div onClick={() => handleNominations(movie)}>
-                    {nominatedID.includes(movie.imdbID) && nominatedID.length <= 5 && isResultsList ? (<Nominated />) : (<NominateComponent />)}
+                    {nominatedID.includes(movie.imdbID) && nominatedID.length <= 5 && isResultsList ? (<NominatedComponent />) : (<NominateComponent active={`${nominatedID.length < 5 ? true : false}`} inactive={`${nominatedID.length === 5 ? true : false }`} />)}
                 </div>
             </div>
             )}
