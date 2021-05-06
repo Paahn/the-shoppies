@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/movielist.css';
-import Nominated from './Nominated';
 
 const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, isResultsList, nominatedComponent }) => {
     const NominateComponent = nominateComponent;
