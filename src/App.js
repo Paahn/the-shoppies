@@ -15,6 +15,10 @@ const App = () => {
   const [nominations, setNominations] = useState([]);
   const [nominatedID, setNominatedID] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [searchErrors, setSearchErrors] = useState({ 
+    errors: false,
+    message: ''
+  })
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
@@ -44,10 +48,18 @@ const App = () => {
     await fetch(url)
     .then ((response) => response.json())
     .then ((data) => {
+      // console.log("RESPONSE ", data);
       if (data.Search) {
         const moviesOnly = data.Search.filter(movie => movie.Type === "movie");
         setIsSearching(false);
+        setSearchErrors({errors: false, message: ''});
         setMovies(moviesOnly);
+      }
+      if (data.Error) {
+        setIsSearching(false);
+        setSearchErrors({errors: true, message: `${data.Error}`});
+        setMovies([]);
+        console.log(data.Error);
       }
     })
   };
@@ -64,6 +76,7 @@ const App = () => {
       getMovies();
     } else {
       setIsSearching(false);
+      setSearchErrors({errors: false, message: ''});
       setMovies([]);
     }
   }, [debouncedSearchMovies]);
@@ -98,6 +111,7 @@ const App = () => {
       </CardContent>
       </Card>
       {isSearching && <div>Searching ...</div>}
+      {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
       <div className='movies-display'>
         <Card>
           <CardContent>
