@@ -1,4 +1,6 @@
 .movies-display {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  margin: 0 auto;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
 }
