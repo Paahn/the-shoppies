@@ -48,7 +48,6 @@ const App = () => {
     await fetch(url)
     .then ((response) => response.json())
     .then ((data) => {
-      // console.log("RESPONSE ", data);
       if (data.Search) {
         const moviesOnly = data.Search.filter(movie => movie.Type === "movie");
         setIsSearching(false);
@@ -59,7 +58,6 @@ const App = () => {
         setIsSearching(false);
         setSearchErrors({errors: true, message: `${data.Error}`});
         setMovies([]);
-        console.log(data.Error);
       }
     })
   };
