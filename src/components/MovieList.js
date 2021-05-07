@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/movielist.css';
+import defaultPoster from '../default_poster.jpeg';
 
 const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, isResultsList, nominatedComponent }) => {
     const NominateComponent = nominateComponent;
@@ -8,7 +9,7 @@ const MovieList = ({ movies, nominateComponent, handleNominations, nominatedID, 
         <div>
             {movies.map((movie) => 
             <div className='movie' key={movie.imdbID}>
-                <img src={movie.Poster} alt='movie'></img>
+                <img src={movie.Poster === 'N/A' ? defaultPoster : movie.Poster} alt='movie'></img>
                 <p>{movie.Title}</p>
                 <p>{movie.Year}</p>
                 <div onClick={() => handleNominations(movie)}>
