@@ -14,6 +14,7 @@ const App = () => {
   const [inputMovies, setInputMovies] = useState('');
   const [nominations, setNominations] = useState([]);
   const [nominatedID, setNominatedID] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
@@ -45,6 +46,7 @@ const App = () => {
     .then ((data) => {
       if (data.Search) {
         const moviesOnly = data.Search.filter(movie => movie.Type === "movie");
+        setIsSearching(false);
         setMovies(moviesOnly);
       }
     })
@@ -58,8 +60,10 @@ const App = () => {
 
   useEffect(() => {
     if (debouncedSearchMovies) {
+      setIsSearching(true);
       getMovies();
     } else {
+      setIsSearching(false);
       setMovies([]);
     }
   }, [debouncedSearchMovies]);
@@ -93,6 +97,7 @@ const App = () => {
         />
       </CardContent>
       </Card>
+      {isSearching && <div>Searching ...</div>}
       <div className='movies-display'>
         <Card>
           <CardContent>
