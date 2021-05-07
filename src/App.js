@@ -7,6 +7,7 @@ import Search from './components/Search';
 import Card from '@material-ui/core/Card';
 import { CardContent } from '@material-ui/core';
 import '../src/app.css';
+import useDebounce from './utils/debounceHook';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -53,9 +54,15 @@ const App = () => {
     localStorage.setItem('movie-nominations', JSON.stringify(items));
   }
   
+  const debouncedSearchMovies = useDebounce(inputMovies, 500);
+
   useEffect(() => {
-    getMovies();
-  }, [inputMovies]);
+    if (debouncedSearchMovies) {
+      getMovies();
+    } else {
+      setMovies([]);
+    }
+  }, [debouncedSearchMovies]);
 
   useEffect(() => {
     const movieNominations = JSON.parse(
