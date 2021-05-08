@@ -18,7 +18,7 @@ const App = () => {
   const [searchErrors, setSearchErrors] = useState({ 
     errors: false,
     message: ''
-  })
+  });
 
   const addNomination = (movie) => {
     const movieNominationIDs = nominations.map(nom => nom.imdbID);
@@ -53,6 +53,7 @@ const App = () => {
         setIsSearching(false);
         setSearchErrors({errors: false, message: ''});
         setMovies(moviesOnly);
+        console.log(moviesOnly.length, ' results found');
       }
       if (data.Error) {
         setIsSearching(false);
