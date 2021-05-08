@@ -9,6 +9,7 @@ import { CardContent } from '@material-ui/core';
 import '../src/app.css';
 import useDebounce from './utils/debounceHook';
 
+
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [inputMovies, setInputMovies] = useState('');
@@ -118,6 +119,14 @@ const App = () => {
       {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
       <div className='movies-display'>
         <Card>
+          <CardContent>
+            <div className='search-results-top'>
+              <p>Movie search results will appear here</p>
+              {inputMovies !== '' ? (
+                <p>Your search for {inputMovies} returned {movies.length} movies.</p>
+                ) : null}
+            </div>
+          </CardContent>
           <CardContent>
             <MovieList 
               movies={movies}
