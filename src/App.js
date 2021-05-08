@@ -101,6 +101,11 @@ const App = () => {
   return (
     <div>
       <Card>
+        <CardContent>
+          <p>Nominate your 5 favourite movies for the prestigious Shoppies awards!</p>
+        </CardContent>
+      </Card>
+      <Card>
       <CardContent>
         <Search
           inputMovies={inputMovies}
