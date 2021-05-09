@@ -1,11 +1,6 @@
 .remove-nomination-button {
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.remove-nomination-button:hover {
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
 
 .remove-nomination-button .MuiSvgIcon-colorPrimary {

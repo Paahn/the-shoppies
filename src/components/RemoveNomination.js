@@ -4,8 +4,8 @@ import '../styles/removenomination.css';
 
 const RemoveNomination = () => {
     return (
-        <div className='remove-nomination-button'>
-            <div>
+        <div>
+            <div className='remove-nomination-button'>
                 <HighlightOffIcon color='primary' />
                 Remove
             </div>

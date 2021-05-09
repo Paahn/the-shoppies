@@ -12,14 +12,20 @@ img {
     background: antiquewhite;
 }
 
+.movie-title {
+    width: 150px;
+}
+
 .nomination-button-container {
     display: flex;
     align-items: center;
     border: 1px solid #000000;
     border-radius: 5px;
-    padding: 3px;
     color: #fff;
     background-color: #00805f;
+    width: 100px;
+    padding: 5px;
+    justify-content: center;
 }
 
 .nomination-button-container:hover {

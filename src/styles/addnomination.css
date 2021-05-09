@@ -20,12 +20,13 @@
     cursor: default;
 }
 
-.nomination-available {
+/* .nomination-available {
     color: white;
     background-color: #00805f;
-}
+} */
 
 .nomination {
+    display: flex;
     height: 100%;
     width: 100%;
 }
