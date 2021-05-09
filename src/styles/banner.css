@@ -1,14 +1,30 @@
-.banner {
-    background-color: #ffa484;
+@keyframes lip {
+    0%   {background-color:#ffcb67;}
+    25%  {background-color:#ffa484;}
+    50%  {background-color:#d45122}
+    75%  {background-color:#ffa484;}
+    100% {background-color:#ffcb67;}
+}
+div.banner {
+    /* background-color: #ffcb67; */
     border-radius: 4px;
-    padding: 10px;
-    margin: 10px;
-    transform: translateX(50%);
-    -webkit-transform: translateX(50%);
+    border: 5px solid #ffa484;
+    /* transform: translateY(50%);
+    -webkit-transform: translateY(50%); */
+    width: 50%;
+    height: 20vh;
+    margin: 30px auto;
     text-align: center;
-    line-height: 3;
-    text-decoration: underline overline #084c3f wavy;
-    font-size: large;
+    padding: 5px;
+    -webkit-animation: lip 4s ease;
+    animation: lip 4s ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+
+.bigger {
+    font-size: 25px;
 }
 
 .slider {
