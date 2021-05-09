@@ -122,9 +122,9 @@ const App = () => {
       <div className='movies-display'>
         <Card className='search-results'>
           <CardContent>
-            {isSearching && <Searching />}
-            {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
             <div className='search-results-top'>
+              {isSearching && <Searching />}
+              {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
               <p>Movie search results will appear here</p>
               {inputMovies !== '' ? (
                 <p>Your search for {inputMovies} returned {movies.length} movies.</p>
