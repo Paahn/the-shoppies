@@ -1,6 +1,8 @@
 .top {
   width: 100%;
   background-color: #00805f;
+  display: flex;
+  color: #fff;
 }
 
 .logo {

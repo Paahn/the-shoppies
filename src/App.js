@@ -103,7 +103,7 @@ const App = () => {
 
   return (
     <div>
-      <div className='top'><img src={logo} width='auto' height='auto' className='logo' alt='logo'/></div>
+      <div className='top'><img src={logo} width='auto' height='auto' className='logo' alt='logo'/><h2><i>The Shoppies</i></h2></div>
       <Card className='app-description slide-in'>
         <CardContent>
           <p>Nominate your 5 favourite movies for the prestigious Shoppies awards!</p>
