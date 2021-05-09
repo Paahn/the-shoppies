@@ -9,6 +9,7 @@ import { CardContent } from '@material-ui/core';
 import '../src/app.css';
 import useDebounce from './utils/debounceHook';
 import logo from '../src/shoppies-logo.png';
+import Banner from './components/Banner';
 
 
 const App = () => {
@@ -140,7 +141,7 @@ const App = () => {
             />
           </CardContent>
         </Card>
-        {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
+        {nominations.length === 5 ? <Banner /> : <></>}
         <Card className='nominations-card'>
           <CardContent>
             <MovieList

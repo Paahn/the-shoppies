@@ -1,0 +1,25 @@
+.banner {
+    background-color: #ffa484;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    text-align: center;
+    line-height: 3;
+    text-decoration: underline overline #084c3f wavy;
+    font-size: large;
+}
+
+.slider {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.9s forwards;
+}
+
+@keyframes slider {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slider {
+  100% { -webkit-transform: translateX(0%); }
+}
