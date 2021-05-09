@@ -109,7 +109,7 @@ const App = () => {
           <p>Nominate your 5 favourite movies for the prestigious Shoppies awards!</p>
         </CardContent>
       </Card>
-      <Card>
+      <Card className='searchbar'>
       <CardContent>
         <Search
           inputMovies={inputMovies}
@@ -120,7 +120,7 @@ const App = () => {
       {isSearching && <div>Searching ...</div>}
       {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
       <div className='movies-display'>
-        <Card>
+        <Card className='search-results'>
           <CardContent>
             <div className='search-results-top'>
               <p>Movie search results will appear here</p>
@@ -129,7 +129,7 @@ const App = () => {
                 ) : null}
             </div>
           </CardContent>
-          <CardContent>
+          <CardContent className='search-results'>
             <MovieList 
               movies={movies}
               nominateComponent={AddNomination}
@@ -141,7 +141,7 @@ const App = () => {
           </CardContent>
         </Card>
         {nominations.length === 5 ? <div>Nominations completed! If you would like to alter your nominations, then please remove a nomination first. </div> : <></>}
-        <Card>
+        <Card className='nominations-card'>
           <CardContent>
             <MovieList
               movies={nominations}

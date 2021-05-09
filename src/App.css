@@ -10,9 +10,22 @@
   padding: 10px;
   height: 6vh;
 }
+.searchbar {
+  width: 60%;
+  margin: 10px;
+}
+
 .movies-display {
   display: grid;
   margin: 0 auto;
   height: 100%;
   grid-template-columns: 1fr 1fr;
+}
+
+.search-results {
+  margin: 10px;
+}
+
+.nominations-card {
+  margin: 10px;
 }
