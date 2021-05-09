@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card';
 import { CardContent } from '@material-ui/core';
 import '../src/app.css';
 import useDebounce from './utils/debounceHook';
+import logo from '../src/shoppies-logo.png';
 
 
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
     .then ((response) => response.json())
     .then ((data) => {
       if (data.Search) {
-        const moviesOnly = data.Search.filter(movie => movie.Type === "movie");
+        const moviesOnly = data.Search.filter(movie => movie.Type === 'movie');
         setIsSearching(false);
         setSearchErrors({errors: false, message: ''});
         setMovies(moviesOnly);
@@ -102,7 +103,8 @@ const App = () => {
 
   return (
     <div>
-      <Card>
+      <div className='top'><img src={logo} width='auto' height='auto' className='logo' alt='logo'/></div>
+      <Card className='app-description slide-in'>
         <CardContent>
           <p>Nominate your 5 favourite movies for the prestigious Shoppies awards!</p>
         </CardContent>
