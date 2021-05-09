@@ -106,11 +106,15 @@ const App = () => {
   return (
     <div>
       <div className='top'><img src={logo} width='auto' height='auto' className='logo' alt='logo'/><h2><i>The Shoppies</i></h2></div>
-      <Card className='app-description slide-in'>
-        <CardContent className='colored'>
-          <p><h3><strong>Nominate your 5 favourite movies for the prestigious Shoppies Awards!</strong></h3></p>
-        </CardContent>
-      </Card>
+      {
+      nominations.length === 5 
+      ? <Banner /> 
+      : <Card className='app-description slide-in'>
+          <CardContent className='colored'>
+            <p><h3><strong>Nominate your 5 favourite movies for the prestigious Shoppies Awards!</strong></h3></p>
+          </CardContent>
+        </Card>
+      }
       <Card className='searchbar'>
       <CardContent>
         <Search
@@ -142,7 +146,6 @@ const App = () => {
             />
           </CardContent>
         </Card>
-        {nominations.length === 5 ? <Banner /> : <></>}
         <Card className='nominations-card'>
           <CardContent>
             <MovieList
