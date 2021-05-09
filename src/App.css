@@ -58,3 +58,11 @@
 .nominations-card {
   margin: 10px;
 }
+
+.searchbar > .MuiCardContent-root:last-child {
+  padding-bottom: 0;
+}
+
+.searchbar > .MuiCardContent-root {
+  padding: 0;
+}
