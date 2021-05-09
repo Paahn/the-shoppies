@@ -10,6 +10,35 @@
   padding: 10px;
   height: 6vh;
 }
+
+.app-description {
+  width: 30%;
+  height: 20vh;
+  margin: 30px;
+  padding: 5px;
+  font-size: larger;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.9s forwards;
+}
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.9s forwards;
+}
+  
+@keyframes slide-in {
+  100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
+
 .searchbar {
   width: 60%;
   margin: 10px;
