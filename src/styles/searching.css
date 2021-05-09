@@ -1,4 +1,6 @@
 .searching {
-    height: 2vh;
-    background-color: #ffa484;
+    height: 30px;
+    background-color: #00805f;
+    color: #fff;
+    border-radius: 5px;
 }
