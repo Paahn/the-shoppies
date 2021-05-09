@@ -71,6 +71,7 @@
 
 .nominations-card {
   margin: 10px;
+  height: fit-content;
 }
 
 .searchbar > .MuiCardContent-root:last-child {
