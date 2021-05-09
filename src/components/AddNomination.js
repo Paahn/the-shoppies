@@ -5,10 +5,12 @@ import '../styles/addnomination.css';
 const AddNomination = ( { active, inactive }) => {
     return (
         <div className='nomination-button'>
-            <span
+            <div
                 className={`nomination ${active === 'true' ? 'nomination-available' : ''} ${inactive === 'true' ? 'nomination-unavailable' : ''}`}
             >
-                <EmojiEventsIcon color='primary' />Nominate</span>
+                <EmojiEventsIcon color='primary' />
+                Nominate
+            </div>
         </div>
     )
 }
