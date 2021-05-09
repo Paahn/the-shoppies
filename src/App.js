@@ -10,6 +10,7 @@ import '../src/app.css';
 import useDebounce from './utils/debounceHook';
 import logo from '../src/shoppies-logo.png';
 import Banner from './components/Banner';
+import Searching from './components/Searching';
 
 
 const App = () => {
@@ -118,11 +119,11 @@ const App = () => {
         />
       </CardContent>
       </Card>
-      {isSearching && <div>Searching ...</div>}
-      {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
       <div className='movies-display'>
         <Card className='search-results'>
           <CardContent>
+            {isSearching && <Searching />}
+            {searchErrors.errors ? <div>{searchErrors.message}</div> : null}
             <div className='search-results-top'>
               <p>Movie search results will appear here</p>
               {inputMovies !== '' ? (
