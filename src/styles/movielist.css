@@ -9,6 +9,7 @@ img {
     width: 100%;
     margin: 5px;
     border-radius: 4px;
+    background: antiquewhite;
 }
 
 .nomination-button-container {
