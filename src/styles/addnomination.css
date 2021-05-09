@@ -8,9 +8,9 @@
     padding: 3px;
 } */
 
-.nomination-button:hover {
+/* .nomination-button:hover {
     cursor: pointer;
-}
+} */
 
 .nomination-unavailable {
     opacity: 0.4;
@@ -22,7 +22,7 @@
 
 .nomination-available {
     color: white;
-    background-color: #000000;
+    background-color: #00805f;
 }
 
 .nomination {

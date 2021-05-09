@@ -13,7 +13,28 @@ img {
 }
 
 .nomination-button-container {
+    display: flex;
+    align-items: center;
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 3px;
+    color: #fff;
+    background-color: #00805f;
+}
+
+.nomination-button-container:hover {
+    cursor: pointer;
+}
+
+.nomination-unavailable {
+    opacity: 0.4;
+}
+
+.nomination-unavailable:hover {
+    cursor: default;
+}
+
+.nomination-available {
+    color: white;
+    background-color: #00805f;
 }
