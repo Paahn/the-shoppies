@@ -2,11 +2,11 @@
     color: #a39e00;
 }
 
-.nomination-button {
+/* .nomination-button {
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 3px;
-}
+} */
 
 .nomination-button:hover {
     cursor: pointer;
