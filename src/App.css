@@ -31,10 +31,6 @@
   background: antiquewhite;
 }
 
-/* .colored {
-  background-color: rgb(255, 203, 103)
-} */
-
 .slide-in {
   animation: slide-in 0.5s forwards;
   -webkit-animation: slide-in 0.9s forwards;

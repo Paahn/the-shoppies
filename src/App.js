@@ -110,7 +110,7 @@ const App = () => {
       nominations.length === 5 
       ? <Banner /> 
       : <Card className='app-description slide-in'>
-          <CardContent className='colored'>
+          <CardContent>
             <p><h3><strong>Nominate your 5 favourite movies for the prestigious</strong></h3></p> 
             <p><h2><strong>Shoppies Awards!</strong></h2></p>
           </CardContent>
