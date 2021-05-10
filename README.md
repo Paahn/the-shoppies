@@ -22,3 +22,5 @@ Remove a nominee from the nomination list
 - Movies in search results can be added and removed from the nomination list.
 - If a search result has already been nominated, disable its nominate button.
 - Display a banner when the user has 5 nominations.
+
+<img width="1438" alt="Screen Shot 2021-05-09 at 5 33 01 PM" src="https://user-images.githubusercontent.com/45132887/117592218-a27fff80-b0ec-11eb-9681-74d220b587ec.png">
