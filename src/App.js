@@ -111,7 +111,8 @@ const App = () => {
       ? <Banner /> 
       : <Card className='app-description slide-in'>
           <CardContent className='colored'>
-            <p><h3><strong>Nominate your 5 favourite movies for the prestigious Shoppies Awards!</strong></h3></p>
+            <p><h3><strong>Nominate your 5 favourite movies for the prestigious</strong></h3></p> 
+            <p><h2><strong>Shoppies Awards!</strong></h2></p>
           </CardContent>
         </Card>
       }
