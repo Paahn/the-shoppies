@@ -148,6 +148,9 @@ const App = () => {
         </Card>
         <Card className='nominations-card'>
           <CardContent>
+          {nominations.length === 0 ? (
+            <p className='search-results-description'>Nominations will appear here</p>
+          ) : <></> }
             <MovieList
               movies={nominations}
               nominateComponent={RemoveNomination}
